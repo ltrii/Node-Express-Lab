@@ -26,7 +26,6 @@ export default class AddPost extends Component {
       contents: this.state.curContent,
     }
     this.props.addPost(postHold);
-    this.props.aRefresh();
     this.setState({
       curTitle: '',
       curContent: '',

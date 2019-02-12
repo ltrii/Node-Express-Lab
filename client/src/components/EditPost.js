@@ -27,7 +27,6 @@ export default class EditPost extends Component {
       contents: this.state.curContent,
     }
     this.props.editPost(postHold, id);
-    this.props.aRefresh();
     this.setState({
       modal: false
     })

@@ -32,6 +32,7 @@ export default class PostList extends Component {
 
     aRefresh = () => {
       this.getPosts();
+      console.log('REFRESHED')
     }
 
 
@@ -52,14 +53,14 @@ export default class PostList extends Component {
     addPost = (newPost) => {
       Axios
         .post(`http://localhost:4000/api/posts/`, newPost)
-        .then(res => console.log(newPost))
+        .then(res => this.aRefresh())
         .catch(err => console.log(err));
     }
 
     editPost = (cPost, id) => {
       Axios
           .put(`http://localhost:4000/api/posts/${id}`, cPost)
-          .then(res => console.log(cPost))
+          .then(res => this.aRefresh())
           .catch(err => {
               console.log(err);
           })

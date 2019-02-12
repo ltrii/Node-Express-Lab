@@ -18,7 +18,7 @@ export default class Post extends Component {
 
     deletePost = (id) => {
         Axios.delete(`http://localhost:4000/api/posts/${id}`)
-        .then((res) => console.log(res))
+        .then((res) => this.props.aRefresh())
         .catch(err => console.log(err.response));
         this.props.aRefresh();
     }
@@ -34,8 +34,7 @@ export default class Post extends Component {
         </p>
         <div className="editDelete">
         <EditPost post={this.props.post} 
-                  editPost={this.props.editPost}
-                  aRefresh={this.props.aRefresh} />
+                  editPost={this.props.editPost} />
         <Button color="danger" onClick={() => this.deletePost(this.props.post.id)} >DELETE</Button></div>
       </div>
     )
