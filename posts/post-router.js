@@ -64,6 +64,11 @@ router.delete('/:id', async (req, res) => {
   });
 
   router.put('/:id', async (req, res) => {
+    if(!req.body.title || !req.body.contents) {
+        res.status(400).json({error: "Please provide title and contents for the post."});
+        return;
+    }
+    
     try {
       const post = await db.update(req.params.id, req.body);
       if (post) {
