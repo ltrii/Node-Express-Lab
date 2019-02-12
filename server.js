@@ -6,7 +6,7 @@ const server = express();
 
 server.use(express.json());
 
-server.use('/api/posts', hubsRouter);
+server.use('/api/posts', postsRouter);
 
 server.get('/', async (req, res) => {
   res.send(`
