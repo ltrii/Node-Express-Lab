@@ -1,10 +1,13 @@
 const express = require('express'); // importing a CommonJS module
+const cors = require('cors');
 
 const postsRouter = require('./posts/post-router');
 
 const server = express();
 
 server.use(express.json());
+
+server.use(cors());
 
 server.use('/api/posts', postsRouter);
 
