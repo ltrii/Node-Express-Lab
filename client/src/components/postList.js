@@ -27,7 +27,7 @@ export default class PostList extends Component {
   render() {
     return (
       <div>
-        
+        <PostMap posts={this.state.posts} />
       </div>
     )
   }
