@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import EditPost from './EditPost';
+import { Button } from 'reactstrap';
 export default class Post extends Component {
     constructor(props){
         super(props);
@@ -33,8 +34,9 @@ export default class Post extends Component {
         </p>
         <div className="editDelete">
         <EditPost post={this.props.post} 
-                  editPost={this.props.editPost} />
-        <button onClick={() => this.deletePost(this.props.post.id)} >DELETE</button></div>
+                  editPost={this.props.editPost}
+                  aRefresh={this.props.aRefresh} />
+        <Button color="danger" onClick={() => this.deletePost(this.props.post.id)} >DELETE</Button></div>
       </div>
     )
   }

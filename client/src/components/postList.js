@@ -22,13 +22,13 @@ export default class PostList extends Component {
       })
     }
 
-  // componentDidUpdate(prevProps, prevState) {
-  //   if (prevState.posts.length !== this.state.posts.length) {
-  //     this.getPosts();
-  //   } else {
-  //     console.log('empty update')
-  //   }
-  // }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.posts.length !== this.state.posts.length) {
+      this.getPosts();
+    } else {
+      console.log('empty update')
+    }
+  }
 
     aRefresh = () => {
       this.getPosts();
