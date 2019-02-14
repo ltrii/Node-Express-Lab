@@ -9,8 +9,9 @@
     "start": "node index.js",
     "server": "nodemon index.js",
     "client": "npm start --prefix client",
+    "heroku-postbuild": "cd client && npm install && npm run build",
     "dev": "concurrently \"npm run server\" \"npm run client\""
-    },
+  },
   "license": "ISC",
   "dependencies": {
     "concurrently": "^4.1.0",
