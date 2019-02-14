@@ -4,7 +4,6 @@ const cors = require('cors');
 const postsRouter = require('./posts/post-router');
 
 const path = require('path');
-const port = process.env.PORT || 4000;
 
 const server = express();
 
@@ -29,12 +28,5 @@ server.use(express.json());
 server.use(cors());
 
 server.use('/api/posts', postsRouter);
-
-server.get('/', async (req, res) => {
-  res.send(`
-    <h2>Posts</h>
-    <p>Get some posts</p>
-  `);
-});
 
 module.exports = server;
