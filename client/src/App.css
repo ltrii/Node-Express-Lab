@@ -1,0 +1,25 @@
+.App {
+  display: flex;
+  width: 67%;
+  flex-direction: column;
+  margin: auto
+}
+
+.App h1 {
+  font-size: 4em;
+  font-family: 'Rubik', 'Roboto', Arial, Helvetica, sans-serif;
+  margin: 20px 0px;
+}
+
+.aPost {
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin: 10px auto;
+}
+
+.editDelete {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
